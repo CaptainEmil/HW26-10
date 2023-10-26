@@ -2,12 +2,14 @@
 
 console.clear();
 
-function printVals(arr){
+function timer(sec,startTime){
+    let ms=sec*1000;
     let cnt=0;
     let interval=setInterval(function () {
-        console.log(arr[cnt++]);
-        if(cnt===arr.length)clearInterval(interval);
-    },1000);
+        if(startTime===0)clearInterval(interval);
+        console.log(startTime--);
+    },ms);
+
 }
 
-printVals([1,2,3,4]);
+timer(2,5);
